@@ -1,0 +1,24 @@
+@import "./../../../../scss/color.scss";
+@import "./../../../../scss/default.scss";
+
+.button-material-container {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    @include flex-c_c;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        background: $hover_icon;
+    }
+
+    &:active {
+        background: $click_icon;
+    }
+}
+
+
+.button-material-text {
+    color: $color_icon;
+}
