@@ -1,7 +1,26 @@
 @import "./scss/reset.scss";
 @import "./scss/color.scss";
+@import "./scss/default.scss";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
     background: $background_color;
     font-family: 'Roboto', sans-serif;
+    color: $black_font;
+}
+
+
+.mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__background,
+.mdc-checkbox__ripple,
+.mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background {
+    background-color: $color_checkbox !important;
+    border-color: $color_checkbox !important;
+}
+
+.modal-buttons-container {
+    @include flex-c_c;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
