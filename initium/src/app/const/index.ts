@@ -1,0 +1,1 @@
+export const URL_USERS = "https://test-data.directorix.cloud/task1";
