@@ -5,16 +5,23 @@ import { MainPageModule } from './main-page/main-page.module';
 import { UsersModule } from './users/users.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from 'src/store';
+import { ModalModule } from './modal/modal.module';
+import { EFFECTS } from 'src/store/effects';
+import { EffectsModule } from '@ngrx/effects';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     MainPageModule,
     UsersModule,
+    EffectsModule.forRoot(EFFECTS),
     StoreModule.forRoot(appReducers),
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

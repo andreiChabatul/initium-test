@@ -1,8 +1,10 @@
 
 import { createSelector } from "@ngrx/store";
-import { AppStore, usersStore } from "src/app/types/store";
+import { AppStore, modalStore, usersStore } from "src/app/types/store";
 
 
-const selectUsers = (state: AppStore) => state.usersStore;
+const selectUsersStore = (state: AppStore) => state.usersStore;
+const selectModalStore = (state: AppStore) => state.modalStore;
 
-export const selectAllUsers = createSelector(selectUsers, (state: usersStore) => state.users);
+export const selectAllUsers = createSelector(selectUsersStore, (state: usersStore) => state.users);
+export const selectModal = createSelector(selectModalStore, (state: modalStore) => state);

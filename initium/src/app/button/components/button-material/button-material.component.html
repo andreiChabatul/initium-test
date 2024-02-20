@@ -1,5 +1,7 @@
-<div class="button-material-container" (click)="clickButton(typeButton)">
-    <span class="material-symbols-outlined button-material-text">
-        {{typeButton}}
-    </span>
-</div>
+<button class="button-container material-symbols-outlined" (click)="clickButton(typeButton)" [ngClass]="{
+        'button__disable': checkDisableDelete() | async,
+        'button-material-container': isMaterialButton(),
+        'button-blue-container': isBlueButton(),
+        'button-noFon-container': isNoFonButton()}">
+    {{buttonsName[typeButton]}}
+</button>

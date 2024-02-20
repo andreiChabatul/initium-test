@@ -1,14 +1,21 @@
 @import "./../../../../scss/color.scss";
 @import "./../../../../scss/default.scss";
+@import "./../../../../scss/typography.scss";
 
-.button-material-container {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+.button-container {
     @include flex-c_c;
     cursor: pointer;
     transition: all .3s;
+    border: none;
+    
+}
 
+.button-material-container {
+    color: $color_icon;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    
     &:hover {
         background: $hover_icon;
     }
@@ -18,7 +25,38 @@
     }
 }
 
+.button-blue-container {
+    padding: 10px 25px;
+    background: $default_blue ;
+    border-radius: 37px;
+    @include font-18px;
+    color: $background_white;
 
-.button-material-text {
-    color: $color_icon;
+    &:hover {
+        background: $hover_blue;
+    }
+
+    &:active {
+        background: $presed_blue;
+    }
+}
+
+.button-noFon-container {
+    padding: 10px 25px;
+    border-radius: 37px;
+    @include font-18px;
+    color: $default_blue;
+
+    &:hover {
+        background: rgba($hover_blue, .1);
+    }
+
+    &:active {
+        background: rgba($presed_blue, .2);
+    }
+}
+
+.button__disable {
+    pointer-events: none;
+    color: $disable_icon;
 }
