@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MainPageModule } from './main-page/main-page.module';
 import { UsersModule } from './users/users.module';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from 'src/store';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,8 @@ import { UsersModule } from './users/users.module';
   imports: [
     BrowserModule,
     MainPageModule,
-    UsersModule
-
+    UsersModule,
+    StoreModule.forRoot(appReducers),
   ],
   providers: [],
   bootstrap: [AppComponent]
