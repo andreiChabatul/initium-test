@@ -1,1 +1,11 @@
-<p>main-page works!</p>
+<div class="main-container">
+    <h1 class="main-container_title">Клиенты</h1>
+    <div class="work-area">
+        <div class="work-area_header">
+            <div class="work-area_header-buttons">
+                <app-button-material *ngFor="let button of buttonsHeader" [typeButton]="button"></app-button-material>
+            </div>
+        </div>
+        <app-table-main></app-table-main>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@import "./../../../scss/color.scss";
+@import "./../../../scss/default.scss";
+
+.main-container {
+    padding: 2% 1%;
+}
+
+.main-container_title {
+    color: $blue_font;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+.work-area {
+    border-radius: 20px;
+    background: $background_white;
+}
+
+.work-area_header {
+    position: relative;
+    height: 56px;
+}
+
+.work-area_header-buttons {
+    @include flex-c_c;
+    position: absolute;
+    left: 10px;
+    top: 10px
+}

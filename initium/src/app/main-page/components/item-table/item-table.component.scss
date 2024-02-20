@@ -1,0 +1,10 @@
+@import "./../../../../scss/color.scss";
+@import "./../../../../scss/typography.scss";
+
+.users-table-td {
+    width: 280px;
+    height: 47px;
+    vertical-align: middle;
+    color: $black_font;
+    @include font-14px;
+}
