@@ -1,0 +1,10 @@
+@import "./../../../../scss/typography.scss";
+
+.modal-delete_container {
+    height: 200px;
+    position: relative;
+}
+
+.modal-delete_text {
+    @include font-18px;
+}

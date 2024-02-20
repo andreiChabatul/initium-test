@@ -1,0 +1,45 @@
+@import "./../../../../scss/color.scss";
+@import "./../../../../scss/default.scss";
+@import "./../../../../scss/typography.scss";
+
+.wrapper-modal {
+    width: 100%;
+    height: 100%;
+    background: rgba($dark_color, .32);
+    @include flex-c_c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 111;
+}
+
+.modal-container {
+    padding: 2%;
+    position: absolute;
+    @include border20px;
+    width: 448px;
+    background: $background_white;
+}
+
+.close-modal {
+    position: absolute;
+    color: $default_blue;
+    cursor: pointer;
+    transition: .3s;
+    right: 5px;
+    top: 5px;
+
+    &:hover {
+        color: $hover_blue;
+        transform: rotate(180deg);
+    }
+
+    &:active {
+        color: $presed_blue;
+    }
+}
+
+.title-modal {
+    @include font-24px;
+    margin-bottom: 20px;
+}

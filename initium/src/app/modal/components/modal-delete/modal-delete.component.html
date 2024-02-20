@@ -1,0 +1,6 @@
+<div class="modal-delete_container">
+    <p class="modal-delete_text">Удалить выбранные строки ({{amountStr}})?</p>
+    <div class="modal-buttons-container">
+        <app-button-material *ngFor="let button of buttons" [typeButton]="button"></app-button-material>
+    </div>
+</div>
