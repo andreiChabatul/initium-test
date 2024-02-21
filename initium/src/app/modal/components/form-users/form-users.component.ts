@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { REGEX_NUMBER } from 'src/app/button/const';
@@ -51,7 +51,7 @@ export class FormUsersComponent implements OnInit {
   }
 
   get disableField(): boolean {
-    return !Boolean(this._email?.value && this._name?.value && this._surname?.value && this._phone?.value)
+    return !(this._email?.value && this._name?.value && this._surname?.value && this._phone?.value)
   }
 
 

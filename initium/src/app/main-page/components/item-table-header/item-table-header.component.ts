@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { userField } from 'src/app/types';
 import { AppStore, sortTable, typeSort } from 'src/app/types/store';
 import { setSortTable } from 'src/store/actions/tableActions';
-import { selectTableSort } from 'src/store/selectors';
 import { TABLE_NAME } from '../../const';
 
 @Component({

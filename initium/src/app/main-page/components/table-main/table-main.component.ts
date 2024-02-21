@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { user, userField } from 'src/app/types';
-import { AppStore, sortTable, tableStore } from 'src/app/types/store';
+import { AppStore, tableStore } from 'src/app/types/store';
 import { addDelete } from 'src/store/actions/modalActions';
-import { selectAllUsers, selectTable, selectTableSort } from 'src/store/selectors';
+import { selectAllUsers, selectTable } from 'src/store/selectors';
 
 export interface itemUser {
   value: user;
@@ -26,7 +26,7 @@ export class TableMainComponent implements OnInit, OnDestroy {
     subtasks: [],
   };
 
-  allComplete: boolean = false;
+  allComplete = false;
   subscription$: Subscription;
   subscriptionTwo$: Subscription;
   tableStore: tableStore | undefined;

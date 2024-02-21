@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs';
 import * as userActions from '../actions/usersActions';
-import * as modalActions from '../actions/modalActions';
 import { UsersService } from "src/app/users/services/users.service";
 
 

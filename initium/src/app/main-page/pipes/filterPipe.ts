@@ -15,7 +15,7 @@ export class FilterPipe implements PipeTransform {
             return value.filter((user) => user.value[field].toLowerCase().includes(filter))
         } else {
             return value;
-        };
+        }
 
     }
 

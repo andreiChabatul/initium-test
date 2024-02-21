@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users/services/users.service';
 import { Store } from '@ngrx/store';
 import { AppStore } from './types/store';
-import { openModal } from 'src/store/actions/modalActions';
 import { addUsers } from 'src/store/actions/usersActions';
 
 @Component({
@@ -18,13 +17,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let users = this.userService.getLocalStorage();
+    const users = this.userService.getLocalStorage();
 
     if (!users || users.length === 0) {
       this.userService.getUsers();
     } else {
       this.store.dispatch(addUsers({ payload: users }))
-    };
+    }
 
   }
 

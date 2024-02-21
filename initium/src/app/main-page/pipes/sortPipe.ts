@@ -1,9 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { itemUser } from '../components/table-main/table-main.component';
 import { Store } from '@ngrx/store';
-import { AppStore, sortTable, tableStore } from 'src/app/types/store';
+import { AppStore, sortTable } from 'src/app/types/store';
 import { selectTableSort } from 'src/store/selectors';
-import { map } from 'rxjs';
 import { userField } from 'src/app/types';
 
 @Pipe({
@@ -25,7 +24,7 @@ export class SortPipe implements PipeTransform {
                 : this.sortDESC(value, field)
         } else {
             return value;
-        };
+        }
 
     }
 
