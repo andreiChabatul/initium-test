@@ -1,12 +1,11 @@
 import { modalState } from "./store";
 
 export type buttonsType = 'add_box' | 'delete' | 'deleteBlue' | 'save' | 'cancel';
+export type userField = 'name' | 'surname' | 'email' | 'phone';
 export type user = {
-    name: string,
-    surname: string,
-    email: string,
-    phone: string
+    [key in userField]: string
 }
+
 export interface ResponseServer {
     users: user[];
 }
