@@ -3,6 +3,7 @@
 @import "./scss/default.scss";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
 body {
     background: $background_color;
     font-family: 'Roboto', sans-serif;
@@ -23,4 +24,25 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    border: 1px solid $input_default;
+    border-radius: 5px;
+}
+
+.mdc-line-ripple {
+    display: none;
+}
+
+.mdc-text-field--invalid {
+    border: 1px solid $error_red !important;
+}
+
+.mdc-text-field--focused {
+    border: 1px solid $blue_font !important;
+}
+
+.mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+    font-size: 14px;
 }

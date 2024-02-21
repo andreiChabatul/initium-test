@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -10,11 +11,18 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule,
+    MatFormFieldModule
+
+
   ],
   exports: [
     MatProgressSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ]
 })
 export class MaterialsModule { }
