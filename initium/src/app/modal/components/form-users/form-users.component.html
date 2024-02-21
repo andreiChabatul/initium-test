@@ -42,6 +42,8 @@
     </div>
 
     <div class="modal-buttons-container">
-        <app-button-material *ngFor="let button of buttons" [typeButton]="button"></app-button-material>
+        <app-button-material *ngFor="let button of buttons" [typeButton]="button"
+        [ngClass]="{'button__disable': disableField && button === 'save' }"
+        ></app-button-material>
     </div>
 </form>

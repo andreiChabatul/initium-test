@@ -9,14 +9,14 @@
             <li><app-seacrh-table-header [field]="tableStore?.sortTable?.field"></app-seacrh-table-header></li>
         </ul>
     </span>
-    <span>
+    <div *ngIf="usersTable.subtasks?.length" class="table-users-container">
         <ul *ngIf="usersTable.subtasks">
             <li *ngFor="let subtask of usersTable.subtasks  | sortPipe: tableStore?.sortTable| filterPipe : tableStore "
-                class="item-li-table">
+                class="item-li-table" [ngClass]="{'item-li-delete': subtask.completed}">
                 <mat-checkbox [(ngModel)]="subtask.completed" (ngModelChange)="updateAllComplete()">
                 </mat-checkbox>
                 <app-item-table [user]="subtask.value"></app-item-table>
             </li>
         </ul>
-    </span>
+    </div>
 </section>

@@ -1,5 +1,15 @@
+@import "./../../../../scss/color.scss";
+
 .item-li-table {
     display: flex;
     align-items: center;
 }
 
+.item-li-delete {
+    background: $delete_user;
+}
+
+.table-users-container {
+    height: 60vh;
+    overflow-y: auto;
+}

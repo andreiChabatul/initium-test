@@ -1,6 +1,6 @@
 @import "./../../../../scss/color.scss";
 
-.form-users{
+.form-users {
     position: relative;
     height: 430px;
 }
@@ -22,6 +22,11 @@
     right: 0;
 }
 
-.error-form-container_phone{
+.error-form-container_phone {
     bottom: -5px;
+}
+
+.button__disable {
+    pointer-events: none;
+    opacity: .4;
 }
