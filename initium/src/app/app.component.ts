@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users/services/users.service';
+import { Store } from '@ngrx/store';
+import { AppStore } from './types/store';
+import { openModal } from 'src/store/actions/modalActions';
+import { addUsers } from 'src/store/actions/usersActions';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +14,18 @@ export class AppComponent implements OnInit {
   title = 'initium';
 
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private store: Store<AppStore>) { }
 
   ngOnInit(): void {
-    this.userService.getUsers();
+
+    let users = this.userService.getLocalStorage();
+
+    if (!users || users.length === 0) {
+      this.userService.getUsers();
+    } else {
+      this.store.dispatch(addUsers({ payload: users }))
+    };
+
   }
 
 }

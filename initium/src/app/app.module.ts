@@ -8,7 +8,7 @@ import { appReducers } from 'src/store';
 import { ModalModule } from './modal/modal.module';
 import { EFFECTS } from 'src/store/effects';
 import { EffectsModule } from '@ngrx/effects';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { EffectsModule } from '@ngrx/effects';
     UsersModule,
     EffectsModule.forRoot(EFFECTS),
     StoreModule.forRoot(appReducers),
-    ModalModule
+    ModalModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
