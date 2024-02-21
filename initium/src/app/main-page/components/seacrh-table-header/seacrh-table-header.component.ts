@@ -5,6 +5,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { userField } from 'src/app/types';
 import { AppStore } from 'src/app/types/store';
 import { setFilter } from 'src/store/actions/tableActions';
+import { TABLE_NAME } from '../../const';
 
 @Component({
   selector: 'app-seacrh-table-header',
@@ -14,6 +15,7 @@ import { setFilter } from 'src/store/actions/tableActions';
 export class SeacrhTableHeaderComponent implements OnInit {
 
   @Input() field: userField | undefined;
+  tableName = TABLE_NAME;
   formSearch = new FormControl();
 
   constructor(private store: Store<AppStore>) { }

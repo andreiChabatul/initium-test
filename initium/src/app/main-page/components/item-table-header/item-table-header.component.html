@@ -1,5 +1,5 @@
 <button class="table-header-container" [ngClass]="{'field_active': isField()}" (click)="clickSort()">
-    <p>{{field}}</p>
+    <p>{{tableName[field]}}</p>
     <div>
         <span *ngIf="isField()" class="material-symbols-outlined" [ngClass]="{'DESC-sort': isDESC()}">
             arrow_downward_alt

@@ -4,6 +4,7 @@ import { userField } from 'src/app/types';
 import { AppStore, sortTable, typeSort } from 'src/app/types/store';
 import { setSortTable } from 'src/store/actions/tableActions';
 import { selectTableSort } from 'src/store/selectors';
+import { TABLE_NAME } from '../../const';
 
 @Component({
   selector: 'app-item-table-header',
@@ -15,6 +16,7 @@ export class ItemTableHeaderComponent {
   @Input() field: userField;
   @Input() tableSort: sortTable | null | undefined;
   typeSort: typeSort = 'ASC';
+  tableName = TABLE_NAME;
 
   constructor(private store: Store<AppStore>) { }
 

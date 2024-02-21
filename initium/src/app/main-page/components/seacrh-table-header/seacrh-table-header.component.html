@@ -1,6 +1,6 @@
 <form class="search-container">
     <mat-form-field class="table-search-container">
-        <mat-label>Фильтрация по: {{field || 'не выбрано'}}</mat-label>
+        <mat-label>Фильтрация по: {{field ? tableName[field] : 'не выбрано'}}</mat-label>
         <input type="text" matInput [formControl]="formSearch" placeholder="Ваш запрос">
     </mat-form-field>
 </form>

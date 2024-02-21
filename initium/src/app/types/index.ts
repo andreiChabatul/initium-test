@@ -17,3 +17,7 @@ export type modalName = {
 export type buttonName = {
     [key in buttonsType]: string
 }
+
+export type tableName = {
+    [key in userField]: string
+}
