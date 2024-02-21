@@ -1,0 +1,27 @@
+@import "./../../../../scss/color.scss";
+
+.form-users{
+    position: relative;
+    height: 430px;
+}
+
+.input-form {
+    width: 100%;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.error-form-container {
+    color: $error_red;
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
+.error-form-container_phone{
+    bottom: -5px;
+}

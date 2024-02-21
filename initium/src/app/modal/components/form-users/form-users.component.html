@@ -1,4 +1,47 @@
 <form class="form-users" [formGroup]="usersForm" (ngSubmit)="onSubmit()">
 
+    <div class="input-container">
+        <mat-form-field class="input-form">
+            <mat-label>Имя</mat-label>
+            <input type="text" matInput formControlName="name" placeholder="Введите имя">
+        </mat-form-field>
+        <span *ngIf="(_name?.invalid && (_name?.touched || _name?.dirty))" class="error-form-container">
+            Обязательное поля. Минимальная длиня 2 символа.
+        </span>
+    </div>
 
+    <div class="input-container">
+        <mat-form-field class="input-form">
+            <mat-label>Фамилия</mat-label>
+            <input type="text" matInput formControlName="surname" placeholder="Введите фамилию">
+        </mat-form-field>
+        <span *ngIf="(_surname?.invalid && (_surname?.touched || _surname?.dirty))" class="error-form-container">
+            Обязательное поля. Минимальная длиня 2 символа.
+        </span>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field class="input-form">
+            <mat-label>E-mail</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. name@yandex.ru">
+        </mat-form-field>
+        <span *ngIf="(_email?.invalid && (_email?.touched || _email?.dirty))" class="error-form-container">
+            Обязательное поля. Должен быть валидный адрес email.
+        </span>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field class="input-form">
+            <mat-label>Телефон</mat-label>
+            <input type="tel" matInput formControlName="phone" placeholder="Введите телефон">
+        </mat-form-field>
+        <span *ngIf="(_phone?.invalid && (_phone?.touched || _phone?.dirty))"
+            class="error-form-container error-form-container_phone">
+            Обязательное поля. Должен быть валидный номер для российских операторов связи.
+        </span>
+    </div>
+
+    <div class="modal-buttons-container">
+        <app-button-material *ngFor="let button of buttons" [typeButton]="button"></app-button-material>
+    </div>
 </form>

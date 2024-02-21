@@ -5,6 +5,9 @@ import { ModalDeleteComponent } from './components/modal-delete/modal-delete.com
 import { ButtonModule } from '../button/button.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormUsersComponent } from './components/form-users/form-users.component';
+import { MaterialsModule } from '../materials/materials.module';
+import { ModalAddComponent } from './components/modal-add/modal-add.component';
+import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 
 
 
@@ -13,12 +16,15 @@ import { FormUsersComponent } from './components/form-users/form-users.component
   declarations: [
     ModalComponent,
     ModalDeleteComponent,
-    FormUsersComponent
+    FormUsersComponent,
+    ModalAddComponent,
+    ModalEditComponent
   ],
   imports: [
     CommonModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialsModule
   ],
   exports: [
     ModalComponent

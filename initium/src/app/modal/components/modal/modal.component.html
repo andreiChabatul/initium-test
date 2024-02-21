@@ -9,8 +9,8 @@
                 <div class="modal-container-inside" [ngSwitch]="modal.modalState">
                     <app-modal-delete *ngSwitchCase="'delete'"
                         [amountStr]="modal.deleteUsers.length"></app-modal-delete>
-
-
+                    <app-modal-add *ngSwitchCase="'new'"></app-modal-add>
+                    <app-modal-edit [editUser]="modal.editUser" *ngSwitchCase="'edit'"></app-modal-edit>
 
                 </div>
                 <!-- <div class="modal-container-inside">
