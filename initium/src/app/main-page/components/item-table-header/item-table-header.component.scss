@@ -1,0 +1,57 @@
+@import "./../../../../scss/default.scss";
+@import "./../../../../scss/color.scss";
+
+.table-header-container {
+    color: $blue_font;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 4%;
+    width: 250px;
+    height: 47px;
+    @include flex-c_s;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+
+    &:hover {
+        transform: scale(1.01);
+        background: $hover_icon;
+    }
+
+    &:active {
+        background: $click_icon;
+    }
+}
+
+
+.table-header-button {
+    color: $blue_font;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 4%;
+    width: 280px;
+    height: 47px;
+    @include flex-c_s;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+
+    &:hover {
+        transform: scale(1.01);
+        background: $hover_icon;
+    }
+
+    &:active {
+        background: $click_icon;
+    }
+}
+
+.DESC-sort {
+    transform: rotate(180deg);
+}
+
+.field_active {
+    background: rgba($input_default, .2) ;
+}

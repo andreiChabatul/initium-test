@@ -2,9 +2,26 @@
 @import "./../../../../scss/typography.scss";
 
 .users-table-td {
-    width: 280px;
+    width: 250px;
     height: 47px;
     vertical-align: middle;
     color: $black_font;
     @include font-14px;
+    padding: 0 1%;
+}
+
+.table-item-container {
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+
+    &:hover {
+        transform: scale(1.01);
+        background: $hover_icon;
+        text-decoration: underline;
+    }
+
+    &:active {
+        background: $click_icon;
+    }
 }

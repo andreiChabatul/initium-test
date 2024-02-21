@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
-import { user } from 'src/app/types';
-import { AppStore } from 'src/app/types/store';
+import { user, userField } from 'src/app/types';
+import { AppStore, sortTable, tableStore } from 'src/app/types/store';
 import { addDelete } from 'src/store/actions/modalActions';
-import { selectAllUsers } from 'src/store/selectors';
+import { selectAllUsers, selectTable, selectTableSort } from 'src/store/selectors';
 
 export interface itemUser {
-  value?: user;
+  value: user;
   completed: boolean;
   subtasks?: itemUser[];
 }
@@ -18,15 +18,20 @@ export interface itemUser {
   templateUrl: './table-main.component.html',
   styleUrls: ['./table-main.component.scss']
 })
-export class TableMainComponent implements OnInit {
+export class TableMainComponent implements OnInit, OnDestroy {
 
   usersTable: itemUser = {
+    value: {} as user,
     completed: false,
     subtasks: [],
   };
 
   allComplete: boolean = false;
   subscription$: Subscription;
+  subscriptionTwo$: Subscription;
+  tableStore: tableStore | undefined;
+  headerTable: userField[] = ['name', 'surname', 'email', 'phone'];
+  tableStore$ = this.store.select(selectTable);
 
   constructor(private store: Store<AppStore>) { }
 
@@ -36,6 +41,7 @@ export class TableMainComponent implements OnInit {
     this.subscription$ = this.users$.subscribe((users) =>
       this.usersTable.subtasks = users.map((user) => { return { value: user, completed: false } })
     );
+    this.subscriptionTwo$ = this.tableStore$.subscribe((value) => this.tableStore = value);
   }
 
   updateAllComplete() {
@@ -63,6 +69,10 @@ export class TableMainComponent implements OnInit {
     const choiseUsers = this.usersTable.subtasks?.filter((user) => user.completed)
       .map((item) => String(item.value?.email))
     if (choiseUsers) this.store.dispatch(addDelete({ payload: choiseUsers }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscription$.unsubscribe();
   }
 
 }

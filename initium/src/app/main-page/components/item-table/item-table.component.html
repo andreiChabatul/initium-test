@@ -1,4 +1,4 @@
-<table *ngIf="user">
+<table *ngIf="user" class="table-item-container" (click)="openEdit()">
     <td class="users-table-td">{{user.name}}</td>
     <td class="users-table-td">{{user.surname}}</td>
     <td class="users-table-td">{{user.email}}</td>
